@@ -1,13 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+    background-color: #e5ccbb;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ul {
+    list-style: none;
+    margin: auto;
+    width: 50%;
+    font-weight: 300;
+}
+
+ul li {
+    padding: 10px;
+    color: rgb(32 30 30 / 56%);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(32 30 30 / 56%);
+
+}
+
+@media screen and (max-width: 991px) {
+
+    .parent {
+        position: relative;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: #e5ccbb;
+        width: 354px;
+        border-radius: 0px 25px 25px 0px;
+
+    }
+
+    ul li {
+        padding: 5px;
+        font-size: 14px;
+        color: #fcfbfa;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+}
+
+.parent {
+
+    background-color: #fcfbfa;
+    height: 85vh;
+    border-radius: 15px;
+
+}
+
+.header {
+    background-color: #e5ccbb;
+    border-radius: 15px;
+}
+
+#cartall {
+    background-color: #131045;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#header {
+    color: #131045;
+}
+
+i {
+    cursor: pointer;
+}
+
+.popular {
+    background-color: #e5ccbb;
+    border-radius: 0px 13px 0px 13px;
+}
+
+
+
+/*slider code*/
+
+
+
+
+/*
+fonts
+
+font-family: 'Cairo', sans-serif;
+font-family: 'Macondo', cursive;
+font-family: 'Poppins', sans-serif;
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Macondo&family=Poppins:wght@300;400;500;700;800&display=swap');
+
+
+
+
+* {
+
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.swiper-pagination-bullet {
+
+    width: 23px;
+    height: 5px;
+    border-radius: 0;
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
+
+    background-color: #eecab1;
+}
+
+
+.swiper {
+    width: 900px;
+}
+
+section .card .image {
+    height: 200px;
+    width: 200px;
+    padding: 3px;
+    background-color: #eecab1;
+}
+
+section .card .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+@media screen and (max-width: 991px) {
+
+    #cardSlider {
+
+        height: 100%;
+    }
+
+    .card .card-content {
+        padding: 2px;
+    }
+
+    #cardSlider span {
+        font-size: 11px;
+        font-weight: 400;
+    }
+
+    p {
+        font-size: 11px;
+        font-weight: 400;
+    }
+
+    .swiper-slide {
+        height: 350px;
+    }
+}
+
+
+.card {
+
+    background-color: #fff;
+    border-radius: 20px;
+    position: relative;
+    margin: 20px 0;
+}
+
+
+.card::before {
+    content: "";
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    background-color: #eecab1;
+    border-radius: 20px 20px 0 0;
+}
+
+.card .card-content {
+
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+.card .media-icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card .media-icons i {
+    margin-top: 10px;
+    color: #fff;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card .media-icons i:hover {
+    opacity: 1;
+}
+
+.card .name-profession {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    color: #333;
+}
+
+.name-profession .name {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.name-profession .profession {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.card .rating p {
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+}
+
+
+.card .rating i {
+    font-size: 18px;
+    margin: 0;
+    color: #eaa451;
+}
+
+.card .button {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card .button button {
+    background: #eecab1;
+    outline: none;
+    border: none;
+    color: #fff;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button button:hover {
+    background: #eaa451;
 }
