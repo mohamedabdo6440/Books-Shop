@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 function Navbar() {
 
 
+
     return (
 
         <div>
@@ -47,6 +48,7 @@ function Navbar() {
                             <li><Link className="dropdown-item" to="/classics">Harvard Classics</Link></li>
                             <li><Link className="dropdown-item" to="/philosophy">Philosophy</Link></li>
                             <li><Link className="dropdown-item" to="/politics">Politics</Link></li>
+                            <li><Link className="dropdown-item" to="/children">Children</Link></li>
                         </ul>
                     </li>
                     <li><Link to="/allbooks">Find a store</Link></li>

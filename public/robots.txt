@@ -5,3 +5,30 @@ Disallow:
 
 
   
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            items: [],
+            DataisLoaded: false
+        };
+    }
+
+    componentDidMount() {
+        fetch("https://gutendex.com/books?author_year_end=-499")
+            .then((res) => res.json())
+            .then((json) => {
+                this.setState({
+                    items: json,
+                    DataisLoaded: true
+                });
+            })
+
+        console.log(this.state.items)
+    }
+    render() {
+
+
+        const { DataisLoaded, items } = this.state;
+        if (!DataisLoaded) return <div>
+            <h1> Pleses wait some time.... </h1> </div>;

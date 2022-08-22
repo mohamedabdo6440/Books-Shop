@@ -1,5 +1,5 @@
 
-import logo from './booklogo.webp';
+import logo from '../BestSale/logoBook.jpg';
 import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,23 +9,46 @@ import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 
-import data from '../../data.json';
 
 // import required modules
 import { Grid, Pagination } from "swiper";
-import './all.css'
-class AllBooks extends React.Component {
+
+class Childrens extends React.Component {
+
+
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            items: [],
+            DataisLoaded: false
+        };
+    }
+
+    componentDidMount() {
+        fetch("https://gutendex.com/books?topic=children")
+            .then((res) => res.json())
+            .then((json) => {
+                this.setState({
+                    items: json,
+                    DataisLoaded: true
+                });
+            })
+
+        console.log(this.state.items.results)
+    }
 
 
 
     render() {
 
 
+        const { DataisLoaded, items } = this.state;
+        if (!DataisLoaded) return <div>
+            <h1> Pleses wait some time.... </h1> </div>;
 
-
-
-        const Getdata = data.results;
-
+        const Getdata = items.results;
         return (
 
 
@@ -82,8 +105,7 @@ class AllBooks extends React.Component {
             </Swiper>
 
         )
-
     }
 
 }
-export default AllBooks
+export default Childrens
